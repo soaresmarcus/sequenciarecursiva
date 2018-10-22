@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link th:href="@{/assets/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <title>Gerador de sequência lógica</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+
+        <div class="page-header">
+            <h1>Gerador de sequências</h1>
+            Informe um número. Este indicará o índice de início do trecho da sequência será ser retornada.
+        </div>
+        <div class="row">
+            <div class="col-sm-4 ">
+                <form action="/" method="post">
+                    <input type="text" name="indice" id="indice" size="4"/>
+                    <input type="submit" value="Gerar"/>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div th:if="${indice}">
+            <div class="col-sm-5">
+                <h3>Resultado</h3>
+                <div class="col-sm-3"><b>Índice</b></div>
+                <div class="col-sm-8"><b>Sequência</b></div>
+                <div class="col-sm-3" th:utext="${indice} +': '"></div>
+                <div class="col-sm-8" th:utext="${sequencia}"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
